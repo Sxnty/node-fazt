@@ -8,4 +8,3 @@ customEmitter.on("response", (data, secondData) => {
 
 customEmitter.emit("response", "hello world", '123');
 customEmitter.emit("response", {name:'jose'}, '321');
-
