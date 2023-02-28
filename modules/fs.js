@@ -23,9 +23,13 @@ fs.readFile("../data/first.txt", "utf-8", (error, data) => {
     if (error) console.log(error);
     console.log(data);
 
-    fs.writeFile("../data/newFile.txt", "archivo creado desde fs", (error, data) => {
-      console.log(error)
-      console.log(data)
-    });
+    fs.writeFile(
+      "../data/newFile.txt",
+      "archivo creado desde fs",
+      (error, data) => {
+        console.log(error);
+        console.log(data);
+      }
+    );
   });
 });
