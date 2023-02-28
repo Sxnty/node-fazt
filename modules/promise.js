@@ -1,27 +1,12 @@
-const { readFile } = require("fs");
+const { readFile } = require("fs/promises");
 
-/* new Promise((resolve, reject) => {
-  readFile("../data/first.txt", "utf-8", (err, data) => {
-    if (err) reject(err)
-    resolve(data)
-  });
-}); */
-
-const getText = (path) => {
-  return new Promise((resolve, reject) => {
-    readFile(path, "utf-8", (err, data) => {
-      if (err) reject(err);
-      resolve(data);
-    });
-  });
-};
 const readText = async () => {
   try {
-    const result = await getText("../data/first.txt");
-    const result2 = await getText("../data/secsond.txt");
-    const result3 = await getText("../data/newFile.txt");
+    const result = await readFile("../data/first.txt", "utf-8");
     console.log(result);
+    const result2 = await readFile("../data/second.txt", "utf-8");
     console.log(result2);
+    const result3 = await readFile("../data/newFile.txt", "utf-8");
     console.log(result3);
   } catch (error) {
     console.log(error);
